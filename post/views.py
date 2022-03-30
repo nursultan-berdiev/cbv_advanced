@@ -10,4 +10,5 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 
 class PostListView(ListView):
     model = Post
-    
+    template_name = 'post_list.html'
+
