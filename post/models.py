@@ -13,7 +13,7 @@ class Post(models.Model):
         return f'{self.user.username} - {self.title}'
 
     def get_absolute_url(self):
-        return reverse('post_detail', kwargs={'pk': self.id})
+        return reverse('post_detail', kwargs={'id': self.id})
 
 
 class Comment(models.Model):
