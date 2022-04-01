@@ -75,8 +75,16 @@ class PostDeleteView(DeleteView):
 
 
 def test_list_view(request):
-    queryset = Post.objects.all()
+    queryset = Post.objects.filter(id__in=[6,2,3])
     print(str(queryset.query))
     for i in queryset:
         print(i)
     return render(request, 'test.html', {'queryset': queryset})
+
+
+def comment_list_view(request):
+    queryset = Comment.objects.all()
+    print(str(queryset.query))
+    for i in queryset:
+        print(i)
+    return render(request, 'comment_test.html', {'queryset': queryset})
